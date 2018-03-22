@@ -37,10 +37,9 @@ class App extends Component {
     for (let i = 0; i < this.state.equation.length; i++) {
       let char = this.state.equation[i];
       if (char === 'x' || char === '/') {
-        product *= +number;
+        operator === '/' ? product /= +number : product *= +number;
         number = '';
         operator = char;
-        continue;
       } else if (char !== '+' && char !== '-') {
         number += char;
       }
